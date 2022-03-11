@@ -14,7 +14,12 @@
 
       <div class="col text-center">
         <h5><%= "#{post.title}" %></h5>  
- 
+      
+      <% if post.uploaded_image.attached? %>
+        <img src="<%= url_for(post.uploaded_image)%>" class="img-fluid">
+      <% else %>
+      <% end %>
+      
       
       <%= "#{post.posted_on}" %>
       <p>
